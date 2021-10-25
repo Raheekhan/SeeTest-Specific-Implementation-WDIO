@@ -10,7 +10,7 @@ exports.config = {
     ],
 
     capabilities: [{
-        'experitest:accessKey': 'eyJ4cC51Ijo3MzU0MjQsInhwLnAiOjIsInhwLm0iOiJNVFUzT0RZd016ZzFOek16TVEiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4OTM5NjM4NTcsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.GP0hK0o0j2WEKt-J0aXsVbu1tmt-PhWUryqluokszJk',
+        'experitest:accessKey': '', // TODO: Provide your Access Key
         deviceQuery: "@os='ios'",
         platformName: 'iOS',
         automationName: 'XCUITest',
