@@ -18,7 +18,7 @@
   },
   "scripts": {
     "one": "wdio wdio.conf.js",
-    "two": "wdio wdio0.conf.js",
+    "two": "wdio wdio.conf.js",
     "all": "./node_modules/.bin/npm-run-all --parallel one two"
   },
   "keywords": [],
