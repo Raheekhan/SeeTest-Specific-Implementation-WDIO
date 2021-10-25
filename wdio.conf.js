@@ -6,7 +6,7 @@ exports.config = {
     protocol: 'https',
 
     specs: [
-        './test/specs/**/mockauthentication.js'
+        './test/specs/**/simulatecapture.js'
     ],
 
     capabilities: [{
@@ -16,6 +16,7 @@ exports.config = {
         automationName: 'XCUITest',
         app: 'cloud:com.experitest.ExperiBank',
         bundleId: 'com.experitest.ExperiBank',
+        autoAcceptAlerts: true,
         instrumentApp: true,
         dontGoHomeOnQuit: true,
         // appiumVersion: '1.20.2',
