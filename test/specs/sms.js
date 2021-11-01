@@ -11,9 +11,9 @@
 
 */
 
-describe('debug_test', () => {
+describe('sms', () => {
 
-    it('check_deposit', () => {
+    it('sms_test', () => {
 
     });
 

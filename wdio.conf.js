@@ -6,12 +6,13 @@ exports.config = {
     protocol: 'https',
 
     specs: [
-        './test/specs/**/simulatecapture.js'
+        './test/specs/**/adatesting.js'
     ],
 
     capabilities: [{
         'experitest:accessKey': '', // TODO: Provide your Access Key
-        deviceQuery: "@os='ios'",
+        // deviceQuery: "@os='ios'",
+        udid: '011adb5554652d475d6a4f325877a48ccc384e75',
         platformName: 'iOS',
         automationName: 'XCUITest',
         app: 'cloud:com.experitest.ExperiBank',
@@ -27,7 +28,7 @@ exports.config = {
     // baseUrl: 'http://localhost',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
-    connectionRetryCount: 3,
+    // connectionRetryCount: 3,
     framework: 'mocha',
     mochaOpts: {
         ui: 'bdd',

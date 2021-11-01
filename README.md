@@ -22,6 +22,11 @@ Update the relevant properties in **wdio.conf.js**:
 
 - 'experitest:accessKey' - Provide your Access Key
 
+To run the project, run the following command:
+
+```
+wdio wdio.conf.js
+```
 
 ## Parallel Testing
 

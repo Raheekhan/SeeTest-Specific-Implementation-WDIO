@@ -24,9 +24,9 @@
 
 */
 
-describe('debug_test', () => {
+describe('check_deposit', () => {
 
-    it('check_deposit', () => {
+    it('check_deposit_test', () => {
         browser.switchContext("NATIVE_APP");
 
         $("//*[@id='usernameTextField']").waitForDisplayed(10000, false, "Could not find element", 2);
