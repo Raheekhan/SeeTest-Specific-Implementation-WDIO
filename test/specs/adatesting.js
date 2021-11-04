@@ -83,10 +83,12 @@ var fs = require('fs');
 
 const accessKey = '';
 
+const audioFileName = 'login.wav';
+
 describe('ada', () => {
 
     before('setup', () => {
-      browser.execute('seetest:client.startAudioRecording', 'cloud:login_4.wav');
+      browser.execute('seetest:client.startAudioRecording', `cloud:${audioFileName}`);
     });
 
     after('teardown', () => {
@@ -103,9 +105,9 @@ describe('ada', () => {
     });
 
     // it('download_file', () => {
-        // downloadFile('2864476');
-        // getFiles();
-        // downloadFile('2822749');
+    //     // downloadFile2('2864553');
+    //     // getFiles();
+    //     df('2864553');
     // });
 
   });
@@ -116,7 +118,7 @@ function sendKeysWithBT(unicodeKey, customMessage) {
 }
 
 function getFiles() {
-  var req = unirest('GET', 'https://uscloud.experitest.com/api/v1/files')
+  var request = unirest('GET', 'https://uscloud.experitest.com/api/v1/files')
     .headers({
       'content-type': 'application/json',
       'Authorization': `Bearer ${accessKey}`
@@ -128,19 +130,7 @@ function getFiles() {
 }
 
 function deleteFile(fileId) {
-  var req = unirest('DELETE', 'https://uscloud.experitest.com/api/v1/files/' + fileId)
-    .headers({
-      'content-type': 'application/json',
-      'Authorization': `Bearer ${accessKey}`
-    })
-    .end((res) => {
-      if (res.error) throw new Error(res.error);
-      console.log(res.raw_body);
-    });
-}
-
-function downloadFile2(fileId) {
-  var req = unirest('GET', 'https://uscloud.experitest.com/api/v1/files/' + fileId + '/download')
+  var request = unirest('DELETE', `https://uscloud.experitest.com/api/v1/files/${fileId}`)
     .headers({
       'content-type': 'application/json',
       'Authorization': `Bearer ${accessKey}`
@@ -152,27 +142,13 @@ function downloadFile2(fileId) {
 }
 
 function downloadFile(fileId) {
-  console.log('1');
-  var req = unirest('GET', 'https://uscloud.experitest.com/api/v1/files/2864476/download')
+  var request = unirest('GET', `https://uscloud.experitest.com/api/v1/files/${fileId}/download`)
     .headers({
       'content-type': 'application/json',
       'Authorization': `Bearer ${accessKey}`
     })
     .end((res) => {
-      console.log('2');
-      if (res.error) {
-        throw new Error(res.error);
-      }  else {
-        console.log('3');
-        var projectPath = process.cwd();
-        var fileStream = fs.createWriteStream(`${projectPath}/audio_recordings/login.wav`);
-        console.log(`Path: ${fileStream}`)
-        console.log('4');
-        res.pipe(fileStream);
-      }
-
-      // fs.writeFile('login.wav', res.raw_body, 'binary', (err) => {
-      //     console.log(err);
-      // });
+      if (res.error) throw new Error(res.error);
+      console.log(res.raw_body);
     });
 }

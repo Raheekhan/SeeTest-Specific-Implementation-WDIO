@@ -6,13 +6,13 @@ exports.config = {
     protocol: 'https',
 
     specs: [
-        './test/specs/**/adatesting.js'
+        './test/specs/**/phonecall.js'
     ],
 
     capabilities: [{
         'experitest:accessKey': '', // TODO: Provide your Access Key
-        // deviceQuery: "@os='ios'",
-        udid: '011adb5554652d475d6a4f325877a48ccc384e75',
+        deviceQuery: "@os='ios'",
+        // udid: '011adb5554652d475d6a4f325877a48ccc384e75',
         platformName: 'iOS',
         automationName: 'XCUITest',
         app: 'cloud:com.experitest.ExperiBank',

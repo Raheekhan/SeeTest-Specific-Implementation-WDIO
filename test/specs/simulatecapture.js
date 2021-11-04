@@ -44,7 +44,7 @@ describe('check_deposit', () => {
         $("//XCUIElementTypeButton[@id='Scan check']").waitForDisplayed(10000, false, "Could not find element", 2);
         $("//XCUIElementTypeButton[@id='Scan check']").click();
 
-        browser.execute('seetest:client.simulateCapture(\"https://imagesforseetesttesting.s3.us-east-2.amazonaws.com/check.jpeg\")');
+        // browser.execute('seetest:client.simulateCapture(\"https://imagesforseetesttesting.s3.us-east-2.amazonaws.com/check.jpeg\")');
 
         browser.pause(10000);
     });
